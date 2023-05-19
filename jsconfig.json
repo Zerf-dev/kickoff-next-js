@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "paths": {
-      "#/*": ["./src/*"]
+      "#styles/*": ["./src/common/styles/*"],
+      "#constants/*": ["./src/common/constants/*"],
+      "#redux/*": ["./src/common/redux/*"]
     }
   }
 }
