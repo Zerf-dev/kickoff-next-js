@@ -5,8 +5,8 @@ import logo from '#assets/zerf-logo.svg';
 
 export default function RemoveThisComponent() {
   return (
-    <div className="h-screen flex flex-col items-start justify-between py-24 px-44 bg-home text-white">
-      <div className="row items-start justify-between w-full">
+    <div className="flex h-screen flex-col items-start justify-between bg-home px-44 py-24 text-white">
+      <div className="row w-full items-start justify-between">
         <div>
           <Image height={35} width={154.8} src={logo} alt="logo" />
         </div>
@@ -19,8 +19,8 @@ export default function RemoveThisComponent() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <div className="font-medium cursor-pointer">
-          <span className="font-medium text-body-sm">
+        <div className="cursor-pointer font-medium">
+          <span className="text-body-sm font-medium">
             <Trans i18nKey="common:footer" components={{ b: <b className="font-semibold opacity-80" /> }} />
           </span>
         </div>

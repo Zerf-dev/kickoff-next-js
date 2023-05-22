@@ -8,5 +8,6 @@ module.exports = {
   semi: true,
   importOrder: ['^#(.*)$', '^[./]', '^~(.*)'],
   importOrderSeparation: true,
-  importOrderSortSpecifiers: true
+  importOrderSortSpecifiers: true,
+  plugins: [require('prettier-plugin-tailwindcss')]
 };
