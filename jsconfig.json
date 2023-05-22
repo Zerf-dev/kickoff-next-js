@@ -3,7 +3,9 @@
     "paths": {
       "#styles/*": ["./src/common/styles/*"],
       "#constants/*": ["./src/common/constants/*"],
-      "#redux/*": ["./src/common/redux/*"]
+      "#redux/*": ["./src/common/redux/*"],
+      "#assets/*": ["./src/common/assets/*"],
+      "#components/*": ["./src/components/*"]
     }
   }
 }

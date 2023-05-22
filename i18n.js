@@ -1,9 +1,8 @@
 module.exports = {
-  locales: ['en'],
-  defaultLocale: 'en',
+  locales: ['en', 'ar'],
+  defaultLocale: 'ar',
   pages: {
-    '*': ['common'],
-    '/': ['home']
+    '*': ['common']
   },
-  loadLocaleFrom: (lang, ns) => import(`./src/locales/${lang}/${ns}.json`).then(module => module.default)
+  loadLocaleFrom: (lang, ns) => import(`./src/translations/${ns}/${lang}.json`).then(module => module.default)
 };
