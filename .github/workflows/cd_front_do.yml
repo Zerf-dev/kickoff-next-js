@@ -1,0 +1,32 @@
+name: Deploy Frontend Test
+
+run-name: 'Deployment: Front Test by @${{ github.actor }}'
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - development
+
+concurrency:
+  group: deploy-front-test
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: Test app
+    uses: ./.github/workflows/ci_front.yml
+
+  cd-digitalocean:
+    name: Digital Ocean
+    needs: ci
+    uses: Zerf-dev/zerf-infra/.github/workflows/cd-digitalocean.yml@master
+    secrets: inherit
+    with:
+      NAMESPACE: kickoff-next
+      ENVIRONMENT: test
+      PROJECT_NAME: frontend
+      EXPOSE_PORT: 8080
+      WORKDIR: .
+      DOCKERFILE: Dockerfile
+      START_COMMAND: node server.js

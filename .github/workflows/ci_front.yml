@@ -1,0 +1,25 @@
+name: ci_front
+on:
+  push:
+    branches:
+      - master
+      - development
+    paths:
+      - 'packages/front/**'
+  pull_request:
+    branches:
+      - master
+      - development
+    paths:
+      - 'packages/front/**'
+
+jobs:
+  test-front:
+    container: node:lts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: yarn install
+      - name: Run linter
+        run: yarn lint
